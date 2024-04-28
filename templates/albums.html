@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}Albums{% endblock %}
+
+{% block content %}
+<h1>Albums</h1>
+<ul class="list-group">
+    {% for album in albums %}
+    <li class="list-group-item"><a href="{{ url_for('album', album_id=album.id) }}">{{ album.title }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}
